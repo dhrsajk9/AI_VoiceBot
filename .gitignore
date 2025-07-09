@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+voicebotenv/
+
+# Env files
+.env
+
+# Log files
+*.log
+
+# VS Code settings (if applicable)
+.vscode/
+
+# OS-specific
+Thumbs.db
+
+#Gradio files
+.gradio/
+
+*.whl
