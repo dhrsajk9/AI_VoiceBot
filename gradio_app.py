@@ -60,7 +60,8 @@ iface = gr.Interface(
 
 ## Necessary for Railway or any cloud host
 iface.launch(
-    server_name="0.0.0.0" if os.getenv("RAILWAY_STATIC_URL") else "127.0.0.1",
-    server_port=int(os.getenv("PORT", 7860)),
+    server_name="0.0.0.0",
+    server_port=int(os.environ["PORT"]),
     debug=True
 )
+
