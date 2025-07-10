@@ -58,4 +58,11 @@ iface = gr.Interface(
     title="AI Doctor VoiceBot"
 )
 
-iface.launch(debug=True)
+import os
+
+iface.launch(
+    server_name="0.0.0.0",                    
+    server_port=int(os.environ.get("PORT", 7860)),  
+    debug=True
+)
+
