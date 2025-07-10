@@ -42,4 +42,4 @@ Docker is a tool that packages applications. It's like a universal shipping box 
 
 Any code which runs locally but does not work during production is useless as it is close to impossible to find errors during debugging
 
-Why Docker? - It is lightwight, works in isolation, is fast, and works everywhere.
+Why Docker? - It's lightwight, works in isolation, is fast, and works everywhere.
