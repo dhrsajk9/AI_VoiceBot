@@ -58,10 +58,4 @@ iface = gr.Interface(
     title="AI Doctor VoiceBot"
 )
 
-## Necessary for Railway or any cloud host
-iface.launch(
-    server_name="0.0.0.0",
-    server_port=int(os.environ["PORT"]),
-    debug=True
-)
-
+iface.launch(debug=True)
