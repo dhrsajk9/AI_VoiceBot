@@ -28,6 +28,9 @@ Do not include disclaimers or AI-related language — respond as a doctor would.
 """
 
 def process_inputs(audio_filepath, image_filepath):
+    if audio_filepath is None:
+        return "No audio provided", "Cannot analyze without input.", None
+    
     speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=os.environ.get("GROQ_API_KEY"), 
                                                  audio_filepath=audio_filepath,
                                                  stt_model="whisper-large-v3")
@@ -38,7 +41,7 @@ def process_inputs(audio_filepath, image_filepath):
     else:
         doctor_response = "No image provided for me to analyze"
 
-    voice_of_doctor = text_to_speech_with_elevenlabs(input_text=doctor_response, output_filepath="final.mp3") 
+    voice_of_doctor = gtts_text_to_speech(input_text=doctor_response, output_filepath="final.mp3") 
 
     return speech_to_text_output, doctor_response, voice_of_doctor
 
@@ -62,7 +65,7 @@ import os
 
 iface.launch(
     server_name="0.0.0.0",                    
-    server_port=int(os.environ.get("PORT", 7860)),  
+    server_port=int(os.environ.get("PORT", 7860)), 
     debug=True
 )
 
